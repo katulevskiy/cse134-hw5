@@ -1,0 +1,646 @@
+/* =========================================================
+   CSS Variables, Custom Fonts, Layout, Animations, Media Queries
+   ========================================================= */
+
+/* --------------------------------
+   CSS Variables with fallback
+   -------------------------------- */
+:root {
+  --primary-color: #3c78d8;
+  --accent-color: #c05050;
+  --bg-color: #f2f2f2;
+  --font-primary: "Montserrat", Arial, sans-serif;
+  --text-color: #333; /* default text color for light mode */
+  /* Use color-mix for a gradient effect if supported */
+  --gradient-color: color-mix(in srgb, #3c78d8 50%, #c05050 50%);
+  --card-bg: #fff;
+  --card-border: #ddd;
+}
+
+/* --------------------------------
+   Base Styles
+   -------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* --------------------------------
+   Header & Navigation (common to all pages)
+   -------------------------------- */
+header {
+  background-color: var(--primary-color);
+  padding: 1rem;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Active and hover styling for light mode */
+header nav ul li a.active,
+header nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+/* Social icon styling */
+.social-link .nav-icon {
+  width: 24px;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Desktop navigation styling */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.nav-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-extras {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-toggle-button {
+  display: none;
+}
+
+/* Hide the close button by default */
+.nav-close {
+  display: none;
+}
+
+/* ---------- Theme Toggle Button ---------- */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* Hide theme toggle if JavaScript is disabled */
+.no-js #theme-toggle {
+  display: none;
+}
+
+/* --------------------------------
+   Responsive Navigation for Small Screens
+   -------------------------------- */
+@media (max-width: 768px) {
+  header {
+    background-color: var(--primary-color);
+    min-height: 60px;
+    position: relative;
+  }
+  .nav-toggle-button {
+    display: block;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    z-index: 200;
+  }
+  .nav-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+  .nav-menu:target {
+    display: flex;
+  }
+  .nav-menu ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+  }
+  .nav-menu li {
+    margin: 1rem 0;
+  }
+  .nav-close {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    z-index: 300;
+  }
+}
+
+/* --------------------------------
+   Hero Section
+   -------------------------------- */
+.hero {
+  background: url("assets/person.webp") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+}
+
+/* --------------------------------
+   Featured Project Section
+   -------------------------------- */
+.featured-project {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.featured-project h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  /* For projects page, force header to white */
+  color: #fff;
+}
+
+.featured-project figure {
+  margin: 0 auto 1rem;
+  max-width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.featured-project figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.featured-project figcaption {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #666;
+}
+
+.featured-project p {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.featured-project .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.featured-project .btn:hover {
+  background: color-mix(
+    in srgb,
+    var(--accent-color) 50%,
+    var(--primary-color) 50%
+  );
+}
+
+@media (max-width: 600px) {
+  .featured-project {
+    border-radius: 0;
+  }
+  .featured-project figure {
+    border-radius: 0;
+  }
+}
+
+/* --------------------------------
+   Projects Section (Index Page) - Grid Layout
+   -------------------------------- */
+.projects-grid {
+  padding: 2rem;
+  background-color: var(--bg-color);
+  text-align: center;
+}
+
+.projects-grid h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #000; /* black for light theme */
+  text-align: center;
+  padding: 1rem;
+}
+
+main {
+  padding: 2dvh 2dvw;
+}
+
+.projects-section h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.project-tile {
+  text-decoration: none;
+  color: #333;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-tile img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project-tile p {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.project-tile:hover {
+  transform: translateY(-5px);
+  /* Ensure shadow is dark (and not white) */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --------------------------------
+   Projects Page Specific Styles (Article Layout)
+   -------------------------------- */
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  /*border: 1px solid #ddd;*/
+  /* Reserve left border space */
+  border-left: 5px solid transparent;
+  border-radius: 8px;
+  background: var(--card-bg);
+  overflow: hidden;
+  animation: slideIn 0.8s ease-out;
+}
+
+.project:hover {
+  /* Change left border on hover to yellow */
+  border-left-color: var(--accent-color);
+}
+
+.project:has(.github-link:hover) {
+  border-left-color: purple;
+}
+
+.project-description {
+  flex: 1 1 300px;
+  padding: 1rem;
+}
+
+.project-description h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dark .projects-section h1 {
+  color: #fff;
+}
+
+.project-description p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dark article.project {
+}
+
+.github-link {
+  display: inline-block;
+  background: var(--gradient-color, #3c78d8);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.github-link:hover {
+  background: color-mix(in srgb, #c05050 50%, #3c78d8 50%);
+}
+
+.project-image {
+  flex: 1 1 300px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.project-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --------------------------------
+   CSS Animation using @keyframes
+   -------------------------------- */
+@keyframes slideIn {
+  from {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments for Projects Page article layout */
+@media (max-width: 768px) {
+  .project {
+    flex-direction: column;
+  }
+  .project-description,
+  .project-image {
+    flex: 1 1 100%;
+  }
+}
+
+/* --------------------------------
+   Footer
+   -------------------------------- */
+footer {
+  background-color: #444;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer address {
+  font-style: normal;
+  margin-bottom: 0.5rem;
+}
+
+/* --------------------------------
+   Global Media Queries for Typography Adjustments
+   -------------------------------- */
+@media (max-width: 600px) {
+  header nav ul {
+    flex-direction: column;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 993px) {
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  .hero-content h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* -------------------------------
+   Contact Form Styling
+   ------------------------------- */
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.contact-form button:hover {
+  background: var(--accent-color);
+}
+
+.contact-form output {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+#error-output {
+  color: #c00;
+}
+
+#info-output {
+  color: #090;
+}
+
+.dark .contact-form {
+  background: var(--card-bg); /* Uses dark card background */
+  color: var(--text-color);
+}
+
+.dark .contact-form input,
+.dark .contact-form textarea {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-color);
+}
+
+.dark .contact-form button {
+  /* Optionally adjust button text color if needed */
+  color: var(--text-color);
+}
+
+fieldset {
+  border: none;
+}
+
+/* -------------------------------
+   Dark Mode Overrides
+   ------------------------------- */
+.dark {
+  --primary-color: #1e1e1e;
+  --accent-color: #ffb74d;
+  --bg-color: #222;
+  --text-color: #f1f1f1;
+  --card-bg: #333;
+  --card-border: #444;
+}
+
+.dark body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.dark header {
+  background-color: var(--primary-color);
+}
+
+/* Ensure navigation links remain visible in dark mode */
+.dark header nav ul li a {
+  color: var(--text-color);
+}
+
+/* Restore active and hover styles for dark mode */
+.dark header nav ul li a.active,
+.dark header nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+.dark .projects-grid h2 {
+  color: var(--text-color);
+}
+
+/* Featured Project Section */
+.dark .featured-project {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-color);
+}
+.dark .featured-project h2 {
+  /* Force the featured project header to be light */
+  color: var(--text-color);
+}
+.dark .featured-project figcaption {
+  color: #ccc;
+}
+
+/* Project Tiles */
+.dark .project-tile {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-color);
+}
+.dark .project-tile p {
+  color: var(--text-color);
+}
+
+/* Dark mode adjustments for contact form remain as inherited from base styles */
