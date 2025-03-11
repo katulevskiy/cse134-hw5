@@ -99,6 +99,17 @@ header nav ul li a:hover {
   display: none;
 }
 
+/* Invert GitHub and Netlify icons in dark mode */
+.dark .social-link .nav-icon {
+  filter: invert(1); /* This inverts the colors of the image */
+  transition: filter 0.3s ease; /* Smooth transition when theme changes */
+}
+
+/* Optional: add a slight hover effect */
+.dark .social-link:hover .nav-icon {
+  opacity: 0.8;
+}
+
 /* ---------- Theme Toggle Button ---------- */
 .theme-toggle {
   background: none;
