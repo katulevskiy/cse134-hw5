@@ -65,16 +65,16 @@ class ProjectCard extends HTMLElement {
         }
         
         .card-content {
-          flex: 1 1 50%;
-          max-width: 50%; /* Ensures content takes up to 50% of width */
+          flex: 1 1 60%;
+          max-width: 60%; /* Give more space for content (60%) */
           padding: 1.5rem;
           display: flex;
           flex-direction: column;
         }
         
         .card-image {
-          flex: 1 1 50%;
-          max-width: 50%; /* Ensures image takes up to 50% of width */
+          flex: 1 1 40%;
+          max-width: 40%; /* Reduce image space to 40% */
           padding: 0; /* Removed padding to allow image to extend to edge */
           display: flex;
           align-items: center;
@@ -94,6 +94,11 @@ class ProjectCard extends HTMLElement {
           line-height: 1.6;
           color: var(--text-color);
           flex-grow: 1;
+          display: -webkit-box;
+          -webkit-line-clamp: 6;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         
         .tags {
@@ -116,9 +121,10 @@ class ProjectCard extends HTMLElement {
         
         /* Add specific styles for dark mode tags */
         :host([data-theme="dark"]) .tag {
-          background: rgba(255, 183, 77, 0.2);
-          color: var(--accent-color);
-          border-color: rgba(255, 183, 77, 0.4);
+          background: rgba(255, 255, 255, 0.15);
+          color: #ffffff;
+          border-color: rgba(255, 255, 255, 0.3);
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         .github-link {

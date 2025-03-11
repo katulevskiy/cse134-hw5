@@ -1,38 +1,299 @@
 [
   {
     "id": "proj1",
-    "title": "Innovative Web App",
-    "description": "This project demonstrates advanced React techniques with server-side rendering for optimal performance. Features include real-time data visualization, responsive UI components, and accessibility compliance.",
+    "title": "Interactive Learning Module: Web-Based Educational Interface",
+    "description": "The 'Interactive Learning Module' is a cutting-edge web-based educational interface designed to enhance online learning experiences. Utilizing HTML as its core technology, this project leverages semantic markup and modern CSS techniques to create an accessible, responsive design that adapts seamlessly across various devices. The architecture focuses on modularity, allowing for easy integration of additional content modules or interactive elements in the future. Key features include dynamic quizzes, multimedia support, and real-time progress tracking, all aimed at improving student engagement and knowledge retention. Overcoming challenges related to cross-browser compatibility and responsive design, this project stands as a testament to modern web development practices. The 'Interactive Learning Module' offers educators a robust platform for delivering interactive content, fostering an engaging and effective learning environment.",
     "image": "assets/proj1-800.webp",
-    "alt": "A screenshot of the Innovative Web App interface showing data visualization components",
-    "github": "https://github.com/katulevskiy/project-one",
-    "tags": "React, Node.js, TypeScript, Accessibility"
+    "alt": "Screenshot of the Interactive Learning Module: Web-Based Educational Interface project interface",
+    "github": "https://github.com/katulevskiy/cse134-hw5",
+    "tags": "HTML, Web Development, Educational Technology, Responsive Design, Cross-Browser Compatibility, Interactive Content"
   },
   {
     "id": "proj2",
-    "title": "Creative Design System",
-    "description": "A comprehensive design system built to ensure consistency across multiple applications. Includes a component library, design tokens, and documentation for developers and designers to maintain a cohesive user experience.",
+    "title": "NLP-Enhanced OpenBookQA: Advanced Question Answering with Python",
+    "description": "The NLP-OpenBookQA project is a cutting-edge solution designed to revolutionize question answering systems using advanced natural language processing (NLP) techniques. Built in Python, this project leverages state-of-the-art machine learning algorithms and deep learning models to provide accurate and contextually relevant answers drawn from an extensive corpus of knowledge sources. At its core, the architecture utilizes transformer-based models such as BERT or GPT to parse and comprehend complex queries. The implementation includes sophisticated tokenization processes, entity recognition systems, and semantic analysis tools that ensure precision in understanding user intent. One of the major challenges overcome during development was optimizing model performance for real-time response capabilities without sacrificing accuracy. Key features include a highly scalable pipeline capable of handling diverse datasets and an intuitive interface that allows seamless integration with other applications. NLP-OpenBookQA exemplifies innovation by addressing common issues such as ambiguity in natural language queries and improving accessibility to information, thereby empowering users across various domains.",
     "image": "assets/proj2-800.webp",
-    "alt": "Components from the Creative Design System displayed in a grid layout",
-    "github": "https://github.com/katulevskiy/project-two",
-    "tags": "UI/UX, CSS, Storybook, Design Systems"
+    "alt": "Screenshot of the NLP-Enhanced OpenBookQA: Advanced Question Answering with Python project interface",
+    "github": "https://github.com/katulevskiy/NLP-OpenBookQA",
+    "tags": "NLP, Python, Question Answering, Machine Learning, Transformer Models, Deep Learning"
   },
   {
     "id": "proj3",
-    "title": "Dynamic Data Solution",
-    "description": "This application processes large datasets in real-time, providing actionable insights through an intuitive dashboard. Built with performance in mind, it handles millions of data points while maintaining responsive interactions.",
+    "title": "Immersive Realty: Next-Gen Virtual Home Tours",
+    "description": "Immersive Realty: Next-Gen Virtual Home Tours is a cutting-edge application designed to transform real estate exploration by leveraging the power of Virtual Reality (VR) and Augmented Reality (AR). This innovative platform offers potential buyers an immersive experience, allowing them to explore properties in stunning detail from anywhere in the world. Built on a robust architecture that seamlessly integrates VR headsets with AR capabilities, it overcomes traditional barriers in property viewing. Key features include real-time 360-degree navigation, interactive object highlighting for specifications, and customizable virtual staging options. The application\u2019s implementation employs advanced spatial computing algorithms to ensure smooth performance across diverse hardware setups, addressing common challenges such as latency and rendering quality. By providing an engaging and realistic exploration experience, this app not only enhances buyer engagement but also empowers real estate agents with a powerful tool to showcase properties in the most dynamic way possible.",
     "image": "assets/proj3-800.webp",
-    "alt": "Dashboard interface showing real-time data processing visualizations",
-    "github": "https://github.com/katulevskiy/project-three",
-    "tags": "Data Visualization, API Integration, Real-time Processing"
+    "alt": "Screenshot of the Immersive Realty: Next-Gen Virtual Home Tours project interface",
+    "github": "https://github.com/katulevskiy/virtual-reality-home-tour-app",
+    "tags": "Virtual Reality, Augmented Reality, Real Estate Technology, 360-Degree Navigation, Spatial Computing, Interactive User Experience"
   },
   {
     "id": "proj4",
-    "title": "Cutting-edge Tech Exploration",
-    "description": "An experimental project exploring emerging web technologies including WebGL, 3D rendering, and immersive user experiences. This forward-thinking application pushes the boundaries of what's possible in browser-based applications.",
+    "title": "Narrative Nexus: Interactive Storytelling Experience",
+    "description": "\"Narrative Nexus\" is an innovative web application designed for interactive storytelling, allowing users to craft, share, and immerse themselves in narrative-driven stories with branching paths. Built using JavaScript, this platform leverages a modular architecture that integrates seamlessly with modern web technologies like React.js for dynamic user interfaces and Node.js for efficient server-side operations. The drag-and-drop interface simplifies story creation, enabling storytellers of all skill levels to construct complex narratives with ease. Key features include collaborative tools, social media sharing capabilities, and community engagement forums. Overcoming challenges such as real-time collaboration and scalable content delivery, the application provides a robust solution for interactive storytelling enthusiasts. By addressing these complexities, \"Narrative Nexus\" empowers users to explore creative potential while fostering a vibrant community of storytellers.",
     "image": "assets/proj4-800.webp",
-    "alt": "3D visualization created with WebGL showing interactive elements",
-    "github": "https://github.com/katulevskiy/project-four",
-    "tags": "WebGL, 3D, ThreeJS, Performance Optimization"
+    "alt": "Screenshot of the Narrative Nexus: Interactive Storytelling Experience project interface",
+    "github": "https://github.com/katulevskiy/interactive-storytelling-web-app",
+    "tags": "JavaScript, React.js, Node.js, Interactive Storytelling, Web Development, Drag-and-Drop Interface"
+  },
+  {
+    "id": "proj5",
+    "title": "Advanced SpamGuard: Intelligent Email Filtering with Python",
+    "description": "Introducing Advanced SpamGuard, an intelligent email spam filtering solution designed to revolutionize your inbox experience by leveraging cutting-edge machine learning techniques implemented in Python. This project harnesses the power of natural language processing (NLP) and sophisticated algorithms to accurately distinguish between legitimate emails and unwanted spam. Built with a robust architecture, it utilizes a combination of supervised learning models such as Naive Bayes classifiers and Support Vector Machines (SVMs), alongside unsupervised clustering methods for enhanced anomaly detection. Key features include real-time filtering, adaptive learning from user feedback, and customizable sensitivity settings to suit different preferences. The project overcomes challenges related to varying spam tactics by constantly updating its model with new data, ensuring high accuracy and low false-positive rates. Advanced SpamGuard is not only an innovative solution but also a testament to the versatility of Python in solving complex problems.",
+    "image": "assets/proj5-800.webp",
+    "alt": "Screenshot of the Advanced SpamGuard: Intelligent Email Filtering with Python project interface",
+    "github": "https://github.com/katulevskiy/email-spam-filter",
+    "tags": "Python, Machine Learning, Natural Language Processing, Email Filtering, Naive Bayes, Support Vector Machines"
+  },
+  {
+    "id": "proj6",
+    "title": "Innovative Web Interface for Course Enrollment System",
+    "description": "The 'cse134-hw4' project is a cutting-edge web interface designed to streamline course enrollment processes for educational institutions. Utilizing HTML as its primary language, this project emphasizes a clean and responsive design, ensuring accessibility across various devices and browsers. The system architecture incorporates modular components that enhance maintainability and scalability, making it easy to integrate with existing student information systems (SIS). Key features include an intuitive user interface for course selection, real-time seat availability updates, and personalized dashboards for students and faculty alike. Challenges such as optimizing load times and ensuring data integrity were addressed through efficient coding practices and rigorous testing. The project stands out by offering a seamless enrollment experience that minimizes administrative overhead while maximizing student satisfaction.",
+    "image": "assets/proj6-800.webp",
+    "alt": "Screenshot of the Innovative Web Interface for Course Enrollment System project interface",
+    "github": "https://github.com/katulevskiy/cse134-hw4",
+    "tags": "HTML, Web Development, User Interface Design, Course Enrollment System, Modular Architecture, Educational Technology"
+  },
+  {
+    "id": "proj7",
+    "title": "Astro Space-Time Visualization Engine",
+    "description": "The 'Astro Space-Time Visualization Engine' project is a cutting-edge initiative designed to explore and visualize complex astronomical phenomena through advanced computational techniques. Developed using the Astro language, this project leverages its unique capabilities for scientific computing to model and render intricate cosmic events with high precision. The architecture of the engine integrates modular components that allow seamless simulations of celestial mechanics and gravitational interactions. Key features include dynamic time-scaling to observe rapid astrophysical changes and real-time data integration from astronomical databases. A significant challenge overcome in this project was efficiently handling massive datasets while maintaining high performance, achieved through optimized algorithms and parallel processing techniques. This project not only serves as an educational tool for students of astronomy but also provides valuable insights for researchers seeking to understand the universe's vast dynamics.",
+    "image": "assets/proj7-800.webp",
+    "alt": "Screenshot of the Astro Space-Time Visualization Engine project interface",
+    "github": "https://github.com/katulevskiy/cse134-hw4-astro",
+    "tags": "Astro Language, Astronomy Visualization, Scientific Computing, Astrophysics Simulation, Data Integration, Parallel Processing"
+  },
+  {
+    "id": "proj8",
+    "title": "Advanced Natural Language Processing Techniques: Homework Edition",
+    "description": "The 'Advanced Natural Language Processing Techniques: Homework Edition' project is a comprehensive exploration into natural language processing (NLP) using Jupyter Notebooks. Designed to tackle complex linguistic tasks, this repository showcases cutting-edge NLP methodologies applied through Python and popular libraries such as NLTK and spaCy. The core focus of the project includes sentiment analysis, named entity recognition, and text classification, aiming to solve real-world challenges in data-driven decision-making processes. Architecturally, it emphasizes modularity with separate notebooks for distinct tasks, ensuring clarity and reusability. Implementation highlights include leveraging pre-trained models for efficient feature extraction and custom algorithms for domain-specific adaptations. This project not only overcomes common NLP hurdles such as context understanding and ambiguity resolution but also provides a robust framework for further experimentation and learning in the field of artificial intelligence.",
+    "image": "assets/proj8-800.webp",
+    "alt": "Screenshot of the Advanced Natural Language Processing Techniques: Homework Edition project interface",
+    "github": "https://github.com/katulevskiy/nlp-hw2",
+    "tags": "Natural Language Processing, Jupyter Notebook, Python, Machine Learning, Text Analysis, Data Science"
+  },
+  {
+    "id": "proj9",
+    "title": "Interactive Web-Based Data Visualization Dashboard",
+    "description": "The 'Interactive Web-Based Data Visualization Dashboard' is a sophisticated HTML-based web application designed to present complex datasets in an intuitive and visually appealing format. Leveraging advanced CSS techniques and JavaScript libraries, the project offers dynamic interactivity and real-time data updates. The core architecture revolves around modular design principles, enabling seamless integration with various data sources through API calls. Key challenges addressed include optimizing load times by implementing efficient asynchronous data handling and ensuring cross-browser compatibility for enhanced user experience. This dashboard is equipped with customizable charts, graphs, and filters allowing users to interactively explore datasets and gain valuable insights. Its innovative approach simplifies the interpretation of large volumes of information, making it an invaluable tool for data analysts and decision-makers.",
+    "image": "assets/proj9-800.webp",
+    "alt": "Screenshot of the Interactive Web-Based Data Visualization Dashboard project interface",
+    "github": "https://github.com/katulevskiy/cse134-hw3",
+    "tags": "HTML, Data Visualization, Web Development, JavaScript, CSS, API Integration"
+  },
+  {
+    "id": "proj10",
+    "title": "Advanced Web Interface for Academic Coursework Management",
+    "description": "The 'Advanced Web Interface for Academic Coursework Management' is a sophisticated HTML-based project designed to streamline and enhance the academic experience for students in Computer Science. This project focuses on creating an intuitive, user-friendly interface that facilitates efficient management of coursework assignments and resources for CSE134 course participants. Leveraging modern web design principles, the architecture employs semantic HTML5 elements ensuring accessibility and compatibility across various devices and browsers. Key features include dynamic content rendering using JavaScript frameworks integrated with HTML to allow seamless navigation between different modules such as assignment submissions, feedback collection, and resource libraries. The project overcomes common challenges in academic interface designs by implementing responsive layouts that adapt to user preferences and screen sizes while maintaining a minimalistic aesthetic. By utilizing CSS3 for styling alongside HTML, the project delivers an engaging visual experience without compromising on performance or load times. This repository exemplifies how foundational web technologies can be effectively utilized to address specific educational needs, offering a template for future course management systems.",
+    "image": "assets/proj10-800.webp",
+    "alt": "Screenshot of the Advanced Web Interface for Academic Coursework Management project interface",
+    "github": "https://github.com/katulevskiy/cse134-hw2",
+    "tags": "HTML5, Web Development, Educational Technology, User Interface Design, Responsive Layouts, JavaScript"
+  },
+  {
+    "id": "proj11",
+    "title": "Advanced Web Interface: Dynamic HTML Prototype",
+    "description": "The 'Dynamic HTML Prototype' project serves as a foundational exploration into creating sophisticated web interfaces using core HTML technologies. This initiative aims to demonstrate best practices in crafting responsive, user-friendly web pages that can be effortlessly adapted or cloned for various applications. The project leverages advanced HTML techniques and semantic structuring to create an exemplary template showcasing effective use of tags such as <header>, <nav>, <section>, and <footer>. By addressing common challenges like cross-browser compatibility and mobile responsiveness, this prototype offers a robust architecture that supports easy modification and scalability. Key features include a well-organized layout, intuitive navigation, and adherence to modern web standards, making it an ideal starting point for developers looking to establish high-quality HTML-based projects.",
+    "image": "assets/proj11-800.webp",
+    "alt": "Screenshot of the Advanced Web Interface: Dynamic HTML Prototype project interface",
+    "github": "https://github.com/katulevskiy/cse134-hw1",
+    "tags": "HTML, Web Development, Responsive Design, Semantic Markup, Cross-Browser Compatibility, Frontend"
+  },
+  {
+    "id": "proj12",
+    "title": "Soccer Insight: Advanced Football Match Predictions",
+    "description": "Introducing 'Soccer Insight,' an innovative JavaScript-based platform designed to revolutionize football match predictions. This project harnesses cutting-edge algorithms and data analytics to provide users with accurate forecasts on football game outcomes. At its core, Soccer Insight utilizes real-time data feeds from various leagues around the world, integrating them into a robust backend architecture built with Node.js. The frontend is crafted using React, ensuring a seamless and interactive user experience. Key features include dynamic prediction models that adapt based on historical performance, player statistics, and in-game events, making use of machine learning techniques to enhance predictive accuracy. A significant challenge was optimizing data processing speeds while maintaining model precision; this was achieved through efficient algorithm design and asynchronous programming paradigms. Soccer Insight is not just a tool for enthusiasts but also serves sports analysts by providing actionable insights, thus solving the problem of uncertainty in football match outcomes.",
+    "image": "assets/proj12-800.webp",
+    "alt": "Screenshot of the Soccer Insight: Advanced Football Match Predictions project interface",
+    "github": "https://github.com/katulevskiy/football-predictions",
+    "tags": "JavaScript, Node.js, React, Machine Learning, Data Analytics, Sports Technology"
+  },
+  {
+    "id": "proj13",
+    "title": "LayoffPredictor: Machine Learning for Proactive Workforce Management",
+    "description": "LayoffPredictor is an innovative machine learning application designed to forecast potential layoffs within tech companies. By analyzing vast datasets of financial reports, employee demographics, market trends, and historical layoff records, this tool employs advanced predictive analytics to provide early warnings about possible workforce reductions. Developed using Jupyter Notebook for its versatility in data analysis and visualization, the project integrates Python libraries such as Pandas for data manipulation, Scikit-learn for building regression models, and Matplotlib for graphical representation of insights. One major challenge addressed was curating a diverse dataset that accurately reflects industry conditions while ensuring privacy compliance. The architecture is modular, allowing easy updates to incorporate new datasets or modify prediction algorithms. LayoffPredictor aims to empower HR departments with actionable intelligence, enabling strategic planning and minimizing disruption in times of economic uncertainty.",
+    "image": "assets/proj13-800.webp",
+    "alt": "Screenshot of the LayoffPredictor: Machine Learning for Proactive Workforce Management project interface",
+    "github": "https://github.com/katulevskiy/tech_layoffs_ml",
+    "tags": "Machine Learning, Predictive Analytics, Data Visualization, Jupyter Notebook, Python, Workforce Management"
+  },
+  {
+    "id": "proj14",
+    "title": "Tech Sector Layoff Predictor: AI-Driven Insights into Workforce Dynamics",
+    "description": "The Tech Sector Layoff Predictor is a cutting-edge machine learning model designed to forecast potential layoffs within tech companies by analyzing an array of financial and statistical data. Utilizing Jupyter Notebook as its primary environment, this project leverages advanced predictive analytics and algorithms to offer valuable foresight into workforce trends. The architecture incorporates robust preprocessing techniques to handle diverse datasets, ensuring accuracy and reliability in predictions. Challenges such as handling missing values, normalizing disparate data sources, and optimizing model performance were meticulously addressed using ensemble methods and cross-validation strategies. Key features include real-time data processing, intuitive visualizations, and comprehensive reporting tools that allow stakeholders to make informed strategic decisions. This project not only aids HR departments in workforce planning but also empowers financial analysts and investors with critical insights into the stability of tech companies.",
+    "image": "assets/proj14-800.webp",
+    "alt": "Screenshot of the Tech Sector Layoff Predictor: AI-Driven Insights into Workforce Dynamics project interface",
+    "github": "https://github.com/katulevskiy/LAYOFF-PREDICTION",
+    "tags": "Machine Learning, Predictive Analytics, Jupyter Notebook, Financial Data Analysis, Workforce Management, AI"
+  },
+  {
+    "id": "proj15",
+    "title": "Interactive JavaScript Lab: Dynamic Experimentation Hub",
+    "description": "The 'Interactive JavaScript Lab' serves as a dynamic experimentation hub designed for developers to explore and test various JavaScript functionalities in a controlled environment. Leveraging modern JavaScript, this project features an intuitive user interface that allows users to write, execute, and debug code snippets on-the-fly. Key components include a real-time console output display, syntax highlighting editors powered by CodeMirror, and modular architecture enabling easy extension for additional scripting environments. The application is built with Node.js for backend operations, ensuring seamless execution of scripts via the child_process module. This project tackles common challenges in coding education by providing an interactive playground that reduces setup time and encourages experimentation. It stands out through its robust error handling mechanisms and comprehensive logging features, making it a valuable tool for both novice and experienced developers seeking to refine their JavaScript skills.",
+    "image": "assets/proj15-800.webp",
+    "alt": "Screenshot of the Interactive JavaScript Lab: Dynamic Experimentation Hub project interface",
+    "github": "https://github.com/katulevskiy/Lab8-Starter",
+    "tags": "JavaScript, Node.js, CodeMirror, Interactive Learning, Coding Playground, Real-Time Debugging"
+  },
+  {
+    "id": "proj16",
+    "title": "Innovative Web Interface for Lab Management: Lab9_Starter",
+    "description": "Lab9_Starter is a cutting-edge web application designed to revolutionize laboratory management through an intuitive and responsive HTML-based interface. At its core, this project leverages the simplicity of HTML to create a seamless user experience that facilitates effective lab operations. The architecture employs a modular design approach, allowing for easy scalability and integration with additional technologies such as CSS and JavaScript in future iterations. Key features include dynamic form handling, real-time data visualization, and an optimized layout responsive across various devices, ensuring accessibility and ease of use. Throughout development, challenges such as browser compatibility and efficient state management were tackled using innovative solutions like progressive enhancement strategies and lightweight scripting techniques. This project not only streamlines the workflow for lab personnel but also serves as a robust foundation for more complex web applications in scientific settings.",
+    "image": "assets/proj16-800.webp",
+    "alt": "Screenshot of the Innovative Web Interface for Lab Management: Lab9_Starter project interface",
+    "github": "https://github.com/katulevskiy/Lab9_Starter",
+    "tags": "HTML, Web Development, Laboratory Management, User Interface Design, Responsive Design"
+  },
+  {
+    "id": "proj17",
+    "title": "Dynamic Lab Management System: JavaScript-Powered Workspace Organizer",
+    "description": "The 'Dynamic Lab Management System' is a cutting-edge software solution designed to streamline laboratory operations using JavaScript. This system serves as a comprehensive workspace organizer, allowing lab managers and researchers to efficiently manage resources, track experiments, and schedule equipment usage. Built on modern JavaScript frameworks, it employs modular architecture to ensure scalability and maintainability. Key features include real-time data synchronization, user-friendly interfaces for seamless navigation, and robust analytics capabilities that provide insights into resource utilization trends. The implementation leverages asynchronous programming to handle concurrent tasks effectively, ensuring high performance even under heavy loads. By integrating with existing lab databases, this system simplifies the management of complex workflows, significantly reducing administrative overhead. The project overcame challenges related to data consistency and user accessibility by implementing advanced error-handling mechanisms and intuitive UI/UX design principles.",
+    "image": "assets/proj17-800.webp",
+    "alt": "Screenshot of the Dynamic Lab Management System: JavaScript-Powered Workspace Organizer project interface",
+    "github": "https://github.com/katulevskiy/lab7-starter",
+    "tags": "JavaScript, Lab Management, Real-time Synchronization, Asynchronous Programming, Data Analytics, Modular Architecture"
+  },
+  {
+    "id": "proj18",
+    "title": "Interactive Web Application Prototype: Lab6 Exploration",
+    "description": "The 'Interactive Web Application Prototype: Lab6 Exploration' is a meticulously designed JavaScript-based project crafted for students participating in CSE110-SP24. This lab serves as an educational platform to master foundational concepts in web development, focusing on creating dynamic and interactive user interfaces. Leveraging modern JavaScript frameworks, the architecture emphasizes modularity and scalability, utilizing components that encapsulate specific functionalities. Key features include real-time data handling, event-driven programming, and responsive design elements that ensure optimal performance across devices. The project tackles common challenges such as managing asynchronous operations and ensuring seamless state management through effective use of promises and async/await patterns. By overcoming these hurdles, the application not only provides a robust learning experience but also demonstrates best practices in JavaScript architecture. This prototype exemplifies problem-solving skills by addressing typical user interaction issues, ultimately delivering an intuitive and engaging interface for end-users.",
+    "image": "assets/proj18-800.webp",
+    "alt": "Screenshot of the Interactive Web Application Prototype: Lab6 Exploration project interface",
+    "github": "https://github.com/katulevskiy/CSE110-SP24-Lab6-Template",
+    "tags": "JavaScript, Web Development, Asynchronous Programming, Responsive Design, Event-Driven Architecture, Modularity"
+  },
+  {
+    "id": "proj19",
+    "title": "JavaScript Lab Dashboard: Interactive Learning Environment",
+    "description": "The 'JavaScript Lab Dashboard' is an advanced interactive learning platform designed to provide a dynamic environment for coding exercises and real-time feedback. Developed primarily in JavaScript, this project leverages modern frameworks like React.js for a responsive user interface and Node.js for efficient backend processing. The architecture emphasizes modularity and scalability, using WebSockets to facilitate live code execution and instant evaluation of user inputs. Key features include a customizable workspace that supports syntax highlighting, error detection, and automated testing capabilities. By overcoming challenges related to real-time data synchronization and optimizing performance across diverse devices, the platform ensures seamless integration of educational content with hands-on practice. This project solves common issues faced by learners in programming labs by offering an intuitive interface that bridges theoretical concepts with practical application.",
+    "image": "assets/proj19-800.webp",
+    "alt": "Screenshot of the JavaScript Lab Dashboard: Interactive Learning Environment project interface",
+    "github": "https://github.com/katulevskiy/Lab5_Starter",
+    "tags": "JavaScript, React.js, Node.js, WebSockets, Real-time Feedback, Interactive Learning"
+  },
+  {
+    "id": "proj20",
+    "title": "Haskelite: A High-Performance Functional Data Processing Engine",
+    "description": "Haskelite is an innovative data processing engine designed to leverage the power of Haskell for efficient functional programming paradigms. At its core, Haskelite aims to solve the complexity and performance challenges associated with large-scale data manipulation by employing a purely functional architecture. This project utilizes Haskell's robust type system and lazy evaluation features to ensure safe and efficient operations on massive datasets. The engine supports parallel processing capabilities, enabling concurrent computation that significantly speeds up data transformation tasks. One of the key challenges addressed in Haskelite was optimizing memory usage while maintaining high throughput, which was achieved through innovative use of monads and custom data structures tailored for performance. With a focus on extensibility, the project's architecture allows for easy integration with other Haskell libraries and external systems. This makes Haskelite not just a powerful tool for developers looking to harness functional programming in data-intensive applications but also an exemplar of modern software design principles.",
+    "image": "assets/proj20-800.webp",
+    "alt": "Screenshot of the Haskelite: A High-Performance Functional Data Processing Engine project interface",
+    "github": "https://github.com/katulevskiy/Haskell",
+    "tags": "Haskell, Functional Programming, Data Processing, Parallel Computing, Type System, Lazy Evaluation"
+  },
+  {
+    "id": "proj21",
+    "title": "Dynamic Lab Simulation Environment: CSE110 Lab 4",
+    "description": "The 'Dynamic Lab Simulation Environment' is a cutting-edge JavaScript-based platform designed to enhance learning experiences for Computer Science students. This project was meticulously crafted to simulate complex laboratory scenarios, providing an interactive and immersive environment where theoretical knowledge meets practical application. By leveraging modern JavaScript frameworks and libraries, the system offers real-time feedback and dynamic problem-solving capabilities, thus bridging the gap between classroom instruction and hands-on experience. The architecture is modular, allowing for seamless scalability and integration with other educational tools. Key features include adaptive learning pathways that adjust to individual student performance, collaborative workspaces, and a comprehensive dashboard providing educators with insights into student progress. Challenges such as maintaining high responsiveness under varying loads were overcome by employing efficient state management techniques and optimizing resource allocation. This project not only solves the common problem of disconnected learning modules but also enhances engagement through its intuitive user interface and robust backend services.",
+    "image": "assets/proj21-800.webp",
+    "alt": "Screenshot of the Dynamic Lab Simulation Environment: CSE110 Lab 4 project interface",
+    "github": "https://github.com/katulevskiy/sp24-cse110-lab4",
+    "tags": "JavaScript, Educational Technology, Interactive Learning, Real-Time Feedback, Modular Architecture, Scalability"
+  },
+  {
+    "id": "proj22",
+    "title": "Dynamic Styling with CSS: Mastering Layouts for Modern Web Design",
+    "description": "The 'Dynamic Styling with CSS' project is a sophisticated exploration into the art of web design using Cascading Style Sheets (CSS) as its core technology. Designed to tackle the challenges of creating responsive and visually engaging web interfaces, this initiative focuses on implementing advanced CSS techniques to deliver seamless user experiences across various devices. By leveraging modern layout systems such as Flexbox and Grid, the project showcases how intricate designs can be achieved with minimal code complexity. One of the key architectural decisions was the modular approach to styling components, allowing for easy customization and scalability. The implementation details highlight innovative solutions to common web design challenges, including cross-browser compatibility and dynamic content rendering without compromising performance. This project not only solves practical layout issues but also serves as a learning platform for developers aiming to enhance their CSS proficiency in building adaptable and aesthetically pleasing web applications.",
+    "image": "assets/proj22-800.webp",
+    "alt": "Screenshot of the Dynamic Styling with CSS: Mastering Layouts for Modern Web Design project interface",
+    "github": "https://github.com/katulevskiy/sp24-cse110-lab3",
+    "tags": "CSS, Web Design, Flexbox, Grid Layout, Responsive Design, Cross-Browser Compatibility"
+  },
+  {
+    "id": "proj23",
+    "title": "GeoGuessr Navigator: Unveiling Hidden Coordinates",
+    "description": "The GeoGuessr Navigator is a sophisticated JavaScript-based solution engineered to unravel the mysteries of Geoguessr locations with precision. This project leverages advanced algorithmic techniques and geospatial analytics to automatically determine and return accurate geographical coordinates within the interactive world of Geoguessr. By parsing visual cues from images and employing machine learning models, this script overcomes the inherent challenges of manual location guessing. The architecture combines real-time data processing with a robust backend infrastructure to ensure quick response times and high accuracy. Key features include an intuitive user interface for seamless interaction, automated batch processing capabilities for handling multiple queries simultaneously, and comprehensive logging mechanisms that track performance metrics. This project not only enhances user experience by providing instant solutions but also serves as a learning tool for enthusiasts keen on understanding geolocation technologies.",
+    "image": "assets/proj23-800.webp",
+    "alt": "Screenshot of the GeoGuessr Navigator: Unveiling Hidden Coordinates project interface",
+    "github": "https://github.com/katulevskiy/GeoGuessr_Resolver",
+    "tags": "JavaScript, Machine Learning, Geospatial Analytics, Algorithm Design, Real-Time Processing, User Interface"
+  },
+  {
+    "id": "proj24",
+    "title": "Interactive Web-Based Lab Simulation: cse110-lab2",
+    "description": "The 'cse110-lab2' project is an innovative web-based laboratory simulation crafted in HTML to provide students with an interactive learning environment. This project was designed to enhance the understanding of fundamental computer science concepts through hands-on virtual experiments, bridging the gap between theoretical knowledge and practical application. By leveraging a client-side architecture, this lab simulation delivers seamless user experiences without server dependencies, allowing for easy deployment across different platforms. The implementation focuses on creating responsive layouts that adapt to various screen sizes, ensuring accessibility from desktops to mobile devices. Challenges such as ensuring cross-browser compatibility and optimizing load times were meticulously addressed, resulting in a robust and efficient educational tool. Key features include interactive widgets, real-time feedback mechanisms, and modular design, which facilitate easy updates and scalability. This project not only solves the issue of limited physical lab access but also offers an engaging alternative to traditional learning methods, making it a valuable resource for educators and students alike.",
+    "image": "assets/proj24-800.webp",
+    "alt": "Screenshot of the Interactive Web-Based Lab Simulation: cse110-lab2 project interface",
+    "github": "https://github.com/katulevskiy/cse110-lab2",
+    "tags": "HTML, Web Development, Interactive Learning, Educational Technology, Responsive Design, Cross-Browser Compatibility"
+  },
+  {
+    "id": "proj25",
+    "title": "Luminous Ledger: A Revolutionary Data Management System",
+    "description": "\"Luminous Ledger\" is a cutting-edge data management platform designed to streamline organizational workflows by offering unparalleled efficiency in managing large-scale datasets. Built using Python, this project leverages advanced algorithms and robust database technologies to facilitate seamless integration and real-time data processing. The system architecture employs microservices to ensure scalability and maintainability, allowing individual components to operate independently yet cohesively. Key features include a dynamic dashboard for intuitive data visualization, automated data ingestion pipelines, and AI-driven analytics that provide actionable insights. Overcoming challenges in data consistency and latency, \"Luminous Ledger\" ensures high availability and fault tolerance through distributed computing frameworks. This project is invaluable for enterprises seeking to enhance their decision-making capabilities with reliable and agile data solutions.",
+    "image": "assets/proj25-800.webp",
+    "alt": "Screenshot of the Luminous Ledger: A Revolutionary Data Management System project interface",
+    "github": "https://github.com/katulevskiy/110-L1",
+    "tags": "Python, Data Management, Microservices, Real-time Processing, Data Visualization, AI Analytics"
+  },
+  {
+    "id": "proj26",
+    "title": "BSPWM Arch Linux: Streamlined Development Environment",
+    "description": "Introducing 'BSPWM Arch Linux', a meticulously crafted minimalistic build designed to revolutionize your development workflow. This project provides a lightweight yet powerful Arch Linux environment, leveraging the elegance of BSPWM (Binary Space Partitioning Window Manager) to deliver an efficient and fast-paced workspace for developers. Focused on maximizing system performance with minimal overhead, this build is tailored for speed and simplicity, ensuring that every resource is put to optimal use without unnecessary bloat.\n\nBuilt from scratch, BSPWM Arch Linux addresses common pain points such as sluggish boot times and cumbersome package management by integrating essential development tools out-of-the-box. The architecture prioritizes modularity, allowing developers to easily customize their environment according to specific project needs while maintaining system stability. By overcoming challenges related to resource allocation and user experience, this build stands as a testament to what streamlined computing can achieve.\n\nKey features include pre-configured BSPWM settings for seamless window management, optimized kernel parameters for enhanced performance, and an automated setup script that simplifies the installation process. Whether you're a seasoned developer or new to Arch Linux, this project offers a robust foundation on which to build your productivity dreams.",
+    "image": "assets/proj26-800.webp",
+    "alt": "Screenshot of the BSPWM Arch Linux: Streamlined Development Environment project interface",
+    "github": "https://github.com/katulevskiy/bspwm-build",
+    "tags": "BSPWM, Arch Linux, Minimalistic Build, Development Environment, Lightweight System, Performance Optimization"
+  },
+  {
+    "id": "proj27",
+    "title": "Py-WebServer: A Scalable Python-Powered HTTP Server",
+    "description": "Introducing Py-WebServer, a robust and scalable web server solution crafted in Python. This project addresses the need for lightweight yet powerful HTTP servers by leveraging Python's flexibility and simplicity. At its core, Py-WebServer utilizes asynchronous I/O through asyncio to handle multiple client connections efficiently, ensuring high performance under heavy loads. The architecture is modular, allowing developers to plug in custom request handlers easily. Key features include support for routing, middleware integration, and session management, making it suitable for a wide range of web applications. During development, challenges such as concurrency handling and optimizing resource utilization were tackled with innovative solutions. Py-WebServer stands out by offering an easy-to-deploy server that simplifies web hosting without compromising on functionality or performance.",
+    "image": "assets/proj27-800.webp",
+    "alt": "Screenshot of the Py-WebServer: A Scalable Python-Powered HTTP Server project interface",
+    "github": "https://github.com/katulevskiy/Py-WebServer",
+    "tags": "Python, Web Server, Asynchronous I/O, HTTP, Middleware, Scalability"
+  },
+  {
+    "id": "proj28",
+    "title": "Pythagon: Dynamic Obstacle Avoidance Game",
+    "description": "Pythagon is an engaging single-player game designed with intricate obstacle-avoiding mechanics. Developed in response to a friend's challenge, this project showcases my swift adaptation and application of the Pygame library within just two hours, demonstrating both learning agility and creative execution. Utilizing Python, the core language for development, I crafted a fluid gaming experience where players must deftly navigate through dynamically generated obstacles, honing reflexes and strategic planning. The architecture employs modular design principles to ensure scalability and ease of future enhancements. Key features include real-time collision detection and responsive controls that adapt to player inputs seamlessly. Overcoming initial unfamiliarity with Pygame, this project exemplifies problem-solving acumen and a commitment to crafting an immersive user experience. It highlights the potential of Python in developing lightweight yet captivating gaming applications.",
+    "image": "assets/proj28-800.webp",
+    "alt": "Screenshot of the Pythagon: Dynamic Obstacle Avoidance Game project interface",
+    "github": "https://github.com/katulevskiy/The-Square-Game",
+    "tags": "Python, Pygame, Game Development, Obstacle Avoidance, Real-Time Collision Detection, Single-Player"
+  },
+  {
+    "id": "proj29",
+    "title": "Advanced Autonomous Path Optimization: Next-Gen Algorithm Enhancement",
+    "description": "The 'Advanced Autonomous Path Optimization' project represents a significant evolution in path-planning algorithms, leveraging Python's robust capabilities to deliver enhanced efficiency and precision. This initiative builds upon an initial algorithm framework, transforming it into a sophisticated system capable of handling complex navigation scenarios with unparalleled accuracy. By integrating advanced heuristics and machine learning techniques, this project optimizes route selection for autonomous systems, ensuring minimal resource consumption while maximizing performance. Key architectural choices include the use of modular design patterns that facilitate easy scalability and maintenance. The implementation details focus on reducing computational overhead through optimized data structures and algorithmic refinements. Challenges such as dynamic obstacle recognition and real-time path adjustments have been effectively addressed, demonstrating significant improvements in decision-making processes. This project is pivotal for applications requiring high levels of autonomous navigation precision, from self-driving vehicles to robotic process automation.",
+    "image": "assets/proj29-800.webp",
+    "alt": "Screenshot of the Advanced Autonomous Path Optimization: Next-Gen Algorithm Enhancement project interface",
+    "github": "https://github.com/katulevskiy/path-planning-2",
+    "tags": "Path-Planning, Python, Autonomous Systems, Algorithm Optimization, Machine Learning, Robotics"
+  },
+  {
+    "id": "proj30",
+    "title": "ArmorGuard: Advanced Armor Recognition for Robotics Competitions",
+    "description": "Introducing ArmorGuard, a cutting-edge armor recognition solution tailored for robotics competitions. Built upon Yolo's renowned low-power, ultra-lightweight universal target detection algorithm, this project revolutionizes mobile terminal capabilities with an impressively lightweight parameter of just 250k. The model achieves blazing speeds on smartphone devices, reaching approximately 300 frames per second or more, making it ideal for real-time applications in high-stakes environments like robotics tournaments. ArmorGuard leverages advanced machine learning techniques to train models specifically designed for identifying and distinguishing armor pieces with unparalleled accuracy. This project addresses the critical challenge of fast and reliable armor detection under dynamic conditions by optimizing both speed and efficiency without compromising on precision. The architecture utilizes a streamlined neural network structure, ensuring minimal computational overhead while delivering robust performance. With ArmorGuard, teams can gain a competitive edge in robotics competitions through enhanced recognition capabilities that ensure swift response times and strategic advantage.",
+    "image": "assets/proj30-800.webp",
+    "alt": "Screenshot of the ArmorGuard: Advanced Armor Recognition for Robotics Competitions project interface",
+    "github": "https://github.com/katulevskiy/Yolo-FastestV2-armor-recognition",
+    "tags": "Yolo, Machine Learning, Robotics, Computer Vision, Mobile AI, Real-Time Processing"
+  },
+  {
+    "id": "proj31",
+    "title": "Katulevskiy: A Comprehensive Personal Portfolio Management System",
+    "description": "The Katulevskiy project is a sophisticated portfolio management system designed to streamline personal branding and showcase creative work in an organized manner. Built using Python, this tool leverages Flask for its lightweight web framework capabilities, providing both flexibility and ease of deployment. The architecture follows the Model-View-Controller (MVC) pattern, ensuring scalability and maintainability. Users can seamlessly integrate various media types such as images, videos, and code snippets into their portfolio with support for Markdown rendering, enhancing readability and presentation. One notable challenge was implementing a responsive design that adapts to multiple devices while maintaining high performance, achieved through the use of modern CSS frameworks like Bootstrap. Key features include customizable themes, an intuitive drag-and-drop interface, and robust search functionality powered by Elasticsearch, making it easier for potential employers or clients to discover relevant projects. Katulevskiy is not just a portfolio; it's a versatile tool that empowers individuals to present their professional achievements dynamically and efficiently.",
+    "image": "assets/proj31-800.webp",
+    "alt": "Screenshot of the Katulevskiy: A Comprehensive Personal Portfolio Management System project interface",
+    "github": "https://github.com/katulevskiy/katulevskiy",
+    "tags": "Python, Flask, Portfolio Management, Responsive Design, Markdown Rendering, Elasticsearch"
+  },
+  {
+    "id": "proj32",
+    "title": "Comprehensive Android CRM System with Firebase Integration",
+    "description": "The 'Comprehensive Android CRM System with Firebase Integration' is a robust mobile application designed to streamline customer relationship management for businesses. Developed in Java, this app leverages the power of Firebase's Realtime Database and Authentication services to provide seamless data synchronization and secure user access. The architecture is built on a client-server model where the Android client communicates efficiently with Firebase servers, ensuring real-time updates across multiple devices without latency issues. Key features include customizable dashboards for tracking customer interactions, automated task reminders, detailed analytics reports, and role-based access control to enhance collaboration among team members. Overcoming challenges such as data consistency and synchronization in a distributed environment was achieved through meticulous implementation of Firebase's offline capabilities and conflict resolution strategies. This project not only simplifies CRM processes but also significantly improves operational efficiency by providing insights into customer behavior and sales trends.",
+    "image": "assets/proj32-800.webp",
+    "alt": "Screenshot of the Comprehensive Android CRM System with Firebase Integration project interface",
+    "github": "https://github.com/katulevskiy/ACS-Android-CRM-System",
+    "tags": "Java, Android Development, Firebase Realtime Database, User Authentication, Client-Server Architecture, Data Synchronization"
+  },
+  {
+    "id": "proj33",
+    "title": "Advanced License Plate Recognition System for Parking Lot Surveillance",
+    "description": "The 'Advanced License Plate Recognition System for Parking Lot Surveillance' is a cutting-edge computer vision project designed to streamline parking management by automating license plate detection and recognition. Developed using Python, this solution leverages state-of-the-art deep learning models to accurately identify vehicle plates captured via cameras installed in parking lots. The system integrates OpenCV for real-time image processing and TensorFlow/Keras for robust model training and inference, providing high accuracy even under varying lighting conditions and angles. One of the key challenges tackled includes optimizing model performance to minimize false positives while ensuring rapid processing times critical for real-time applications. With an architecture emphasizing modularity, this project allows easy scalability and integration with existing parking management systems. This solution not only enhances security but also improves operational efficiency by reducing manual oversight requirements.",
+    "image": "assets/proj33-800.webp",
+    "alt": "Screenshot of the Advanced License Plate Recognition System for Parking Lot Surveillance project interface",
+    "github": "https://github.com/katulevskiy/car-plate-recognition",
+    "tags": "Computer Vision, Machine Learning, Python, OpenCV, TensorFlow/Keras, Real-Time Processing"
   }
 ]
