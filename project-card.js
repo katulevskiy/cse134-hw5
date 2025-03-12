@@ -14,6 +14,25 @@ class ProjectCard extends HTMLElement {
     const githubUrl =
       this.getAttribute("github") || "https://github.com/katulevskiy";
     const tags = this.getAttribute("tags") || "";
+    const loading = this.getAttribute("loading") || "eager";
+    // NEW attributes added:
+    const commitCount = this.getAttribute("commit_count") || "";
+    const contributors = this.getAttribute("contributors") || "";
+    const projectStatus = this.getAttribute("project_status") || "";
+    const licenseType = this.getAttribute("license_type") || "";
+
+    // Determine a CSS class for the project status based on its value
+    const statusLower = projectStatus.toLowerCase();
+    let statusClass = "";
+    if (statusLower === "active") {
+      statusClass = "status-active";
+    } else if (statusLower === "completed") {
+      statusClass = "status-completed";
+    } else if (statusLower === "in progress") {
+      statusClass = "status-inprogress";
+    } else if (statusLower === "experimental") {
+      statusClass = "status-experimental";
+    }
 
     // Create the internal HTML structure
     this.shadowRoot.innerHTML = `
@@ -31,9 +50,10 @@ class ProjectCard extends HTMLElement {
           --card-border: var(--card-border, #ddd);
           
           display: block;
-          margin: 0 0 3rem 0; /* Added extra bottom margin */
+          margin: 0 0 4rem 0; /* Increased bottom margin for extra vertical space */
           font-family: 'Montserrat', Arial, sans-serif;
           animation: slideIn 0.8s ease-out;
+          contain: content; /* Improve performance with CSS containment */
         }
         
         @keyframes slideIn {
@@ -87,6 +107,8 @@ class ProjectCard extends HTMLElement {
           margin-bottom: 1rem;
           font-size: 1.5rem;
           color: var(--text-color);
+          max-width: 95%;
+          line-height: 1.3;
         }
         
         p {
@@ -99,13 +121,14 @@ class ProjectCard extends HTMLElement {
           -webkit-box-orient: vertical;
           overflow: hidden;
           text-overflow: ellipsis;
+          max-width: 95%;
         }
         
         .tags {
           display: flex;
           flex-wrap: wrap;
           gap: 0.5rem;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1rem; /* Equal vertical spacing */
         }
         
         .tag {
@@ -115,7 +138,6 @@ class ProjectCard extends HTMLElement {
           border-radius: 4px;
           font-size: 0.8rem;
           font-weight: 600;
-          /* Ensure tags are readable in both light and dark modes */
           border: 1px solid rgba(60, 120, 216, 0.3);
         }
         
@@ -125,6 +147,50 @@ class ProjectCard extends HTMLElement {
           color: #ffffff;
           border-color: rgba(255, 255, 255, 0.3);
           text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .meta {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin-bottom: 1rem; /* Equal spacing between meta and GitHub button */
+        }
+        .meta-item {
+          background: rgba(60, 120, 216, 0.2);
+          color: var(--primary-color);
+          padding: 0.25rem 0.75rem;
+          border-radius: 4px;
+          font-size: 0.8rem;
+          font-weight: 600;
+          border: 1px solid rgba(60, 120, 216, 0.3);
+        }
+        /* Dark mode override for meta items that are NOT status items */
+        :host([data-theme="dark"]) .meta-item:not(.status-active):not(.status-completed):not(.status-inprogress):not(.status-experimental) {
+          background: rgba(255, 255, 255, 0.15);
+          color: #ffffff;
+          border-color: rgba(255, 255, 255, 0.3);
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        /* Different colors for various project statuses (preserved in both modes) */
+        .status-active {
+          background: #d4edda;
+          color: #155724;
+          border-color: #c3e6cb;
+        }
+        .status-completed {
+          background: #d1ecf1;
+          color: #0c5460;
+          border-color: #bee5eb;
+        }
+        .status-inprogress {
+          background: #fff3cd;
+          color: #856404;
+          border-color: #ffeeba;
+        }
+        .status-experimental {
+          background: #f8d7da;
+          color: #721c24;
+          border-color: #f5c6cb;
         }
         
         .github-link {
@@ -138,6 +204,7 @@ class ProjectCard extends HTMLElement {
           font-weight: bold;
           align-self: flex-start;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          margin-top: 1rem; /* Equal spacing between meta and button */
         }
         
         .github-link:hover {
@@ -205,12 +272,19 @@ class ProjectCard extends HTMLElement {
               .map((tag) => `<span class="tag">${tag.trim()}</span>`)
               .join("")}
           </div>
+          <!-- NEW meta information inserted below tags -->
+          <div class="meta">
+            <span class="meta-item">Commits: ${commitCount}</span>
+            <span class="meta-item">Contributors: ${contributors}</span>
+            <span class="meta-item ${statusClass}">Status: ${projectStatus}</span>
+            <span class="meta-item">License: ${licenseType}</span>
+          </div>
           <a href="${githubUrl}" class="github-link" target="_blank">View on GitHub</a>
         </div>
         <div class="card-image">
           <picture>
             <source srcset="${imageUrl}" type="image/webp">
-            <img src="${imageUrl.replace(".webp", ".jpg")}" alt="${imageAlt}">
+            <img src="${imageUrl.replace(".webp", ".jpg")}" alt="${imageAlt}" loading="${loading}">
           </picture>
         </div>
       </div>
@@ -268,9 +342,22 @@ class ProjectCard extends HTMLElement {
     }
   }
 
-  // Custom getter/setter for attributes to ensure updates when they change
+  // Add support for lazy loading of images
   static get observedAttributes() {
-    return ["title", "description", "image", "alt", "github", "tags"];
+    return [
+      "title",
+      "description",
+      "image",
+      "alt",
+      "github",
+      "tags",
+      "loading",
+      // NEW attributes observed
+      "commit_count",
+      "contributors",
+      "project_status",
+      "license_type",
+    ];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -285,7 +372,7 @@ class ProjectCard extends HTMLElement {
         const srcEl = this.shadowRoot.querySelector("source");
         const linkEl = this.shadowRoot.querySelector("a.github-link");
         const tagsEl = this.shadowRoot.querySelector(".tags");
-
+        // For the new meta block, update via our helper function below
         switch (name) {
           case "title":
             if (titleEl) titleEl.textContent = newValue;
@@ -311,8 +398,48 @@ class ProjectCard extends HTMLElement {
                 .join("");
             }
             break;
+          // NEW attribute cases: update the meta block
+          case "commit_count":
+          case "contributors":
+          case "project_status":
+          case "license_type":
+            this.updateMeta();
+            break;
+          case "loading":
+            if (imgEl && newValue === "lazy") {
+              imgEl.loading = "lazy";
+            }
+            break;
         }
       }
+    }
+  }
+
+  // NEW helper method to update meta information using the new span structure and status styling
+  updateMeta() {
+    const commitCount = this.getAttribute("commit_count") || "";
+    const contributors = this.getAttribute("contributors") || "";
+    const projectStatus = this.getAttribute("project_status") || "";
+    const licenseType = this.getAttribute("license_type") || "";
+    const statusLower = projectStatus.toLowerCase();
+    let statusClass = "";
+    if (statusLower === "active") {
+      statusClass = "status-active";
+    } else if (statusLower === "completed") {
+      statusClass = "status-completed";
+    } else if (statusLower === "in progress") {
+      statusClass = "status-inprogress";
+    } else if (statusLower === "experimental") {
+      statusClass = "status-experimental";
+    }
+    const metaEl = this.shadowRoot.querySelector(".meta");
+    if (metaEl) {
+      metaEl.innerHTML = `
+        <span class="meta-item">Commits: ${commitCount}</span>
+        <span class="meta-item">Contributors: ${contributors}</span>
+        <span class="meta-item ${statusClass}">Status: ${projectStatus}</span>
+        <span class="meta-item">License: ${licenseType}</span>
+      `;
     }
   }
 }

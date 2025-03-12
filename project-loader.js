@@ -3,47 +3,68 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectsContainer = document.getElementById("projects-container");
   const loadingIndicator = document.getElementById("loading-indicator");
 
-  // First, load from localStorage if available
-  const localProjects = loadProjectsFromLocalStorage();
+  // Start with a blank slate
+  if (projectsContainer) {
+    // Show initial loading set immediately
+    fetchInitialProjects();
 
-  // Then fetch remote projects
-  fetchRemoteProjects()
-    .then((remoteProjects) => {
-      // Remove loading indicator
-      if (loadingIndicator) {
-        loadingIndicator.remove();
-      }
+    // Then load the rest in the background
+    setTimeout(() => {
+      fetchRemainingProjects();
+    }, 100);
+  }
 
-      // Clear existing project cards
-      const existingCards = document.querySelectorAll("project-card");
-      existingCards.forEach((card) => card.remove());
+  // Function to fetch and display the first few projects quickly
+  function fetchInitialProjects() {
+    // First, load from localStorage if available
+    const localProjects = loadProjectsFromLocalStorage();
 
-      // Combine local and remote projects, avoiding duplicates
-      const allProjects = [...localProjects];
+    if (localProjects.length > 0) {
+      // If we have local projects, show them immediately
+      if (loadingIndicator) loadingIndicator.remove();
+      renderProjects(localProjects.slice(0, 4), projectsContainer, true);
+    } else {
+      // Otherwise fetch just the first few from remote
+      fetchPartialRemoteProjects(0, 4)
+        .then((initialProjects) => {
+          if (loadingIndicator) loadingIndicator.remove();
+          renderProjects(initialProjects, projectsContainer, true);
+        })
+        .catch((error) => {
+          console.error("Error fetching initial projects:", error);
+          if (loadingIndicator) {
+            loadingIndicator.textContent = "Could not load projects.";
+            loadingIndicator.style.color = "var(--accent-color)";
+          }
+        });
+    }
+  }
 
-      // Add remote projects that aren't already in local storage
-      remoteProjects.forEach((remote) => {
-        if (!localProjects.some((local) => local.id === remote.id)) {
-          allProjects.push(remote);
+  // Function to fetch and display remaining projects
+  function fetchRemainingProjects() {
+    // Fetch all remote projects
+    fetchRemoteProjects()
+      .then((allProjects) => {
+        // Get the currently displayed projects
+        const existingCards = document.querySelectorAll("project-card");
+        const displayedIds = Array.from(existingCards).map((card) =>
+          card.getAttribute("id"),
+        );
+
+        // Filter out projects that are already displayed
+        const remainingProjects = allProjects.filter(
+          (project) => !displayedIds.includes(`project-${project.id}`),
+        );
+
+        // Render remaining projects
+        if (remainingProjects.length > 0) {
+          renderProjects(remainingProjects, projectsContainer, false);
         }
+      })
+      .catch((error) => {
+        console.error("Error fetching remaining projects:", error);
       });
-
-      // Create and append project cards
-      renderProjects(allProjects, projectsContainer);
-    })
-    .catch((error) => {
-      console.error("Error fetching remote projects:", error);
-
-      // Show error message
-      if (loadingIndicator) {
-        loadingIndicator.textContent =
-          "Could not load all projects. Showing locally stored projects.";
-        loadingIndicator.style.color = "var(--accent-color)";
-      }
-
-      // If remote fetch fails, still render local projects
-      renderProjects(localProjects, projectsContainer);
-    });
+  }
 });
 
 function loadProjectsFromLocalStorage() {
@@ -57,8 +78,26 @@ function loadProjectsFromLocalStorage() {
   }
 }
 
+function fetchPartialRemoteProjects(start, count) {
+  return fetch("projects.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((allProjects) => {
+      // Return just the slice of projects we want
+      return allProjects.slice(start, start + count);
+    })
+    .catch((error) => {
+      console.error("Error fetching partial projects:", error);
+      return [];
+    });
+}
+
 function fetchRemoteProjects() {
-  // Fetch projects from the JSON file
+  // Fetch all projects from the JSON file
   return fetch("projects.json")
     .then((response) => {
       if (!response.ok) {
@@ -73,45 +112,45 @@ function fetchRemoteProjects() {
     });
 }
 
-function renderProjects(projects, container) {
+function renderProjects(projects, container, isInitialLoad = true) {
   // If container doesn't exist, exit early
   if (!container) return;
 
-  // Clear the container first
-  const existingCards = container.querySelectorAll("project-card");
-  existingCards.forEach((card) => card.remove());
+  // If this is the initial load, clear any existing placeholder cards
+  if (isInitialLoad) {
+    const existingCards = container.querySelectorAll("project-card");
+    existingCards.forEach((card) => card.remove());
+  }
 
   // Add project cards with a slight delay between each for a staggered animation effect
   projects.forEach((project, index) => {
-    setTimeout(() => {
-      const card = document.createElement("project-card");
+    setTimeout(
+      () => {
+        const card = document.createElement("project-card");
 
-      // Set all attributes explicitly
-      card.setAttribute("title", project.title || "Untitled Project");
-      card.setAttribute(
-        "description",
-        project.description || "No description available.",
-      );
-      card.setAttribute("image", project.image || "assets/proj1-800.webp");
-      card.setAttribute("alt", project.alt || `${project.title} project image`);
-      card.setAttribute(
-        "github",
-        project.github || "https://github.com/katulevskiy",
-      );
-      card.setAttribute("tags", project.tags || "");
+        // Add ID to track which projects are already rendered
+        card.setAttribute("id", `project-${project.id}`);
 
-      // Add margin-bottom for spacing between cards
-      card.style.marginBottom = "2rem";
+        // Set all project details explicitly.
+        // NEW: New fields (commit_count, contributors, project_status, license_type) are now passed as attributes
+        Object.keys(project).forEach((key) => {
+          if (project[key] !== undefined && project[key] !== null) {
+            card.setAttribute(key, project[key]);
+          }
+        });
 
-      container.appendChild(card);
+        // Force browser to recalculate styles
+        void card.offsetWidth;
 
-      // Force browser to recalculate styles
-      void card.offsetWidth;
-    }, index * 150); // 150ms delay between each card for a nice staggered effect
+        // Append to container
+        container.appendChild(card);
+      },
+      index * (isInitialLoad ? 50 : 100),
+    ); // Faster animation for initial load
   });
 
-  // If no projects, show a message
-  if (projects.length === 0) {
+  // If no projects and this is initial load, show a message
+  if (projects.length === 0 && isInitialLoad) {
     const noProjectsMsg = document.createElement("p");
     noProjectsMsg.textContent = "No projects found.";
     noProjectsMsg.style.textAlign = "center";
@@ -144,28 +183,29 @@ function saveProjectToLocalStorage(project) {
   }
 }
 
-// Function to add a sample project to localStorage (for testing)
-function addSampleProject() {
-  const sampleProject = {
-    id: "sample-" + Date.now(),
-    title: "Sample Local Project",
-    description:
-      "This is a sample project stored in localStorage. You can add more projects like this programmatically.",
-    image: "assets/proj4-800.webp",
-    alt: "Sample Project Image",
-    github: "https://github.com/katulevskiy/sample-project",
-    tags: "Sample, LocalStorage, Demo",
-  };
-
-  saveProjectToLocalStorage(sampleProject);
-
-  // Reload the page to show the new project
-  window.location.reload();
-}
-
 // Add a debug function to the window object for testing
 window.portfolioTools = {
-  addSampleProject,
+  addSampleProject: () => {
+    const sampleProject = {
+      id: "sample-" + Date.now(),
+      title: "Sample Local Project",
+      description:
+        "This is a sample project stored in localStorage. You can add more projects like this programmatically.",
+      image: "assets/proj4-800.webp",
+      alt: "Sample Project Image",
+      github: "https://github.com/katulevskiy/sample-project",
+      tags: "Sample, LocalStorage, Demo",
+      commit_count: 42,
+      contributors: 3,
+      project_status: "Experimental",
+      license_type: "MIT",
+    };
+
+    saveProjectToLocalStorage(sampleProject);
+
+    // Reload the page to show the new project
+    window.location.reload();
+  },
   clearLocalStorage: () => {
     localStorage.removeItem("portfolio-projects");
     window.location.reload();

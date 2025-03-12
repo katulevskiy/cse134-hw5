@@ -110,6 +110,11 @@ header nav ul li a:hover {
   opacity: 0.8;
 }
 
+project-card {
+  display: block;
+  margin-bottom: 1rem;
+}
+
 /* ---------- Theme Toggle Button ---------- */
 .theme-toggle {
   background: none;
