@@ -1257,6 +1257,114 @@ main {
   background-color: var(--gh-accent-color);
   color: var(--gh-primary-color);
 }
+
+/* --------------------------------
+   Resume Page Styling
+   -------------------------------- */
+.resume-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resume-section h1 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.resume-section p {
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+.resume-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.resume-btn:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.resume-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.pdf-embed {
+  margin-top: 2rem;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pdf-embed h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.pdf-embed iframe {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.pdf-embed iframe:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode adjustments */
+.dark .resume-section {
+  background-color: var(--card-bg);
+}
+
+.dark .resume-section h1,
+.dark .pdf-embed h2 {
+  color: var(--accent-color);
+}
+
+.dark .resume-btn {
+  background-color: var(--accent-color);
+  color: #333;
+}
+
+.dark .resume-btn:hover {
+  background-color: #ffcc80; /* Lighter version of the accent color */
+}
+
+.dark .pdf-embed iframe {
+  border: 1px solid var(--card-border);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .resume-section {
+    padding: 1.5rem;
+  }
+
+  .pdf-embed iframe {
+    height: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdf-embed iframe {
+    height: 500px;
+  }
+}
+
 /* --------------------------------
    Footer
    -------------------------------- */
