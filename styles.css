@@ -465,7 +465,9 @@ main {
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
 }
 
 .data-btn:hover {
@@ -488,7 +490,6 @@ main {
   background-color: var(--accent-color);
   color: var(--primary-color);
 }
-
 
 /* --------------------------------
    CRUD Page Styling
@@ -526,7 +527,9 @@ main {
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
   opacity: 0.7;
 }
 
@@ -682,12 +685,14 @@ main {
   font-family: var(--font-primary);
 }
 
-.create-btn, .update-btn {
+.create-btn,
+.update-btn {
   background-color: var(--primary-color);
   color: white;
 }
 
-.create-btn:hover, .update-btn:hover {
+.create-btn:hover,
+.update-btn:hover {
   background-color: var(--accent-color);
   transform: translateY(-2px);
 }
@@ -708,12 +713,14 @@ main {
   transform: none;
 }
 
-.reset-btn, .cancel-btn {
+.reset-btn,
+.cancel-btn {
   background-color: #6c757d;
   color: white;
 }
 
-.reset-btn:hover, .cancel-btn:hover {
+.reset-btn:hover,
+.cancel-btn:hover {
   background-color: #5a6268;
   transform: translateY(-2px);
 }
@@ -743,7 +750,9 @@ main {
   border: 1px solid var(--card-border);
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -1055,6 +1064,20 @@ footer {
 footer address {
   font-style: normal;
   margin-bottom: 0.5rem;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+main {
+  min-height: 0; /* Allows content to determine size */
 }
 
 /* --------------------------------
